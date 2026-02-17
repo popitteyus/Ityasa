@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "ityasa-os",
+  "private_key_id": "2daace4093251818afe033cd548beb3e6a981d2a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDgRMAPqJhVNm8C\nyP+A111/KLLVmvmbZN4x+/0zmA7Qc7+MXPeB1TaUZtRqpFnMSlfHww5K1ouOHbpG\ny56l4Almuze7a+enSvNyzAvNSRlHHciNHjsB6Cx78Ka3sZZRzDfgAaUC1v3ZhoId\nw/vwousMOs8cT9bxALS9JoMnAacY3Nc4jK/Xv20uJyBDdSQly+aehAquB88gwsau\nkliEit1QVttFfSItT9VamLzzYA/HKdJ3IOgnphxQ+lCayH2+zmP3xPuLcQNZs0xm\nvfcYDkzaJUiQC6BxuBtnUV6+eQ/ajP4y7HJMh2W619vfwkEKiRRZiHXlLvsJDaxF\n6V2Ts8R3AgMBAAECggEAAokXphsoWHvFjMj/MZgVgrlpjj8kJ+1Js6RlmykfbWlT\nbZ3iFiLN2rzdoEavk7tGEXms/Zre9GqEFP9HXpyNgWZ83YhN8vGIlnPezix38H5D\nvNmAY73JaZe1TDH38I9D6TJ2E7tQSqmqVNEiOLcj2Te/gglg0LMtmcOwBDGJlwkt\nddyyjm2VQs56ct8KBoi+wCL/0EPcqnMyjUmkhNG+qyrNu/4vVp895kGLjygf6nIP\n2ypIKKiW4x/asblkFLhLUmH4ICm+uJI3Kf6mNzWhorh1QiDAz9HK/Qxnm3QoIfL1\nbmjoPH7POLPZfatK5JoY+j+Ah2ajqlpWraK2pByBqQKBgQD+VhqKrCiNjeyAIn9S\nXr3EdCNM+6NZBw+WlBWcEwGRZDK0lhYE4S9WXEy2rfvNhiVc3rsvI0HWfd1Bq01N\nBw8CDMc6m11xCoIXDH3F0x3dkmto7JVS1HKA0Pmr2Zy6EJrGmJrpUd0DZosq0gCj\nDq9aINTmDV65gaTUyFLtnO9OjQKBgQDhvEv+t253zNH6Nu8Dm9PpQdSU4pva3tLa\n9hAd4mLYkFSGvKibST3NZjMnFqj/zwconfyCCIGcMP4p5vjamWQihAdXTjeX8gQ3\nYe+lhD/L7AQnnf1CQHAUHK10Lec1XRSOsOV29m9Am9WNu038CYuwkO0K0T142h9J\nooUnw7CwEwKBgHUGk2HZQzOW6QowVVtGQpUBRzjl1ExjhlWnv6W3zRHkA7y6Dlmi\nb5CSGa44sdLodYqc5Y4T7/hMo6DSvFfD9rDfxk/+KumXhzIpyjlbIbPQ6mE18qNR\nI3qILUlYcNfgSgc1MppG06X76e8C/84HNMIIt00/O6WptHk/z4CLpEUFAoGAXyF+\nmVrueBheSWeLNOcf2EaA8znI2uVa0SIvyphUddXleV7aY47rN7uhRRDcqemyp6Bl\nANva21seUcRgDaflNlKT0WxKK4O32Ssx1nw0cpkFazi+uYP0d9VaGAMcVDXk6vmL\nyqWyXvUNe4x7IgNX1lJNQ2jI0jyCQQL3wLlMpfcCgYEApUCscnvb2u2EMCfsf6Y1\noIVdgL1zHvp3rV4l/geLdl4M6ihLTttgYSWgrDzL+p/IdVwXlTULeqaKLYMzX0pC\nVX3kTpXWwXSDU0yaYubV5opnyH12BO68p4PWzAy55FCvltfe27pJOfdb/+pNhTkJ\nLUwEcutNrGSUAouggbyC+rA=\n-----END PRIVATE KEY-----\n",
+  "client_email": "ityasa-admin@ityasa-os.iam.gserviceaccount.com",
+  "client_id": "117714329282599191010",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/ityasa-admin%40ityasa-os.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
