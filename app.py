@@ -10,7 +10,7 @@ st.title("📊 ITYASA OS – Project Tracker")
 st.sidebar.success("Terhubung ke Google Sheets")
 
 # Menggunakan credentials dari Streamlit secrets
-scope = ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive"]
+scope = ["https://www.googleapis.com/auth/spreadsheets"]
 
 # Baca credentials dari secrets
 try:
@@ -36,4 +36,5 @@ try:
 except Exception as e:
     st.error(f"Terjadi kesalahan: {e}")
     st.info("Pastikan service account sudah dishare ke Google Sheet dan secrets sudah diatur dengan benar.")
+
 
