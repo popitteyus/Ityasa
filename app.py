@@ -1,35 +1,75 @@
 import streamlit as st
-import gspread
-import pandas as pd
+from utils.db import get_divisi
 
-st.set_page_config(page_title="ITYASA OS Dashboard", layout="wide")
-st.title("📊 ITYASA OS – Project Tracker")
+st.set_page_config(
+    page_title="IVA Dashboard",
+    page_icon="🚀",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
 
-st.sidebar.success("Terhubung ke Google Sheets")
+# Styling kustom (biar keren)
+st.markdown("""
+<style>
+.main-header {
+    font-size: 3rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #4F8BF9, #9D4F9F);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0;
+}
+.sub-header {
+    font-size: 1.2rem;
+    color: #AAAAAA;
+    margin-top: 0;
+}
+.stButton>button {
+    border-radius: 30px;
+    background: linear-gradient(90deg, #4F8BF9, #9D4F9F);
+    color: white;
+    border: none;
+    padding: 0.5rem 2rem;
+    font-weight: 600;
+}
+.stButton>button:hover {
+    transform: scale(1.05);
+}
+</style>
+""", unsafe_allow_html=True)
 
-try:
-    # Ambil informasi service account dari Streamlit Secrets
-    # (sudah dalam bentuk dictionary karena format TOML)
-    service_account_info = st.secrets["gcp_service_account"]
-    
-    # Gunakan gspread untuk otorisasi langsung dari dictionary
-    gc = gspread.service_account_from_dict(service_account_info)
-    
-    # Buka spreadsheet berdasarkan nama
-    sh = gc.open("IVA_Project_Tracker")
-    
-    # Ambil sheet pertama (index 0)
-    worksheet = sh.get_worksheet(0)
-    data = worksheet.get_all_records()
-    df = pd.DataFrame(data)
-    
-    st.subheader("Data dari Sheet 1")
-    st.dataframe(df, use_container_width=True)
-    
-    st.subheader("Ringkasan")
-    st.write(f"Total baris: {len(df)}")
-    st.write(f"Total kolom: {len(df.columns)}")
-    
-except Exception as e:
-    st.error(f"Terjadi kesalahan: {e}")
-    st.info("Pastikan service account sudah diundang ke Google Sheet dan secrets sudah benar.")
+# Sidebar
+with st.sidebar:
+    st.image("https://via.placeholder.com/150x50?text=IVA+Logo", use_column_width=True)
+    st.markdown("## 🧠 IVA Agency")
+    st.markdown("Ruang kendali kreatif")
+    st.markdown("---")
+    st.markdown("### Divisi Aktif")
+    divisi = get_divisi()
+    if divisi:
+        for d in divisi:
+            st.markdown(f"- {d['nama_divisi']}")
+    else:
+        st.write("(Koneksi database belum tersedia)")
+    st.markdown("---")
+    st.caption("v1.0 - Human-in-the-loop")
+
+# Halaman utama
+st.markdown('<h1 class="main-header">🏢 IVA (Ityasa Virtual Agency)</h1>', unsafe_allow_html=True)
+st.markdown('<p class="sub-header">Selamat datang, Founder. Kelola agensi AI Anda dengan mulus.</p>', unsafe_allow_html=True)
+
+st.markdown("---")
+
+col1, col2, col3 = st.columns(3)
+with col1:
+    st.metric("Divisi AI", len(divisi) if divisi else 0)
+with col2:
+    st.metric("Proyek Aktif", "?")  # nanti diisi dari db
+with col3:
+    st.metric("Tugas Selesai", "?")  # nanti diisi
+
+st.markdown("### 🚀 Mulai Cepat")
+if st.button("➕ Input Proyek Baru"):
+    st.switch_page("pages/01_Input_Proyek.py")
+if st.button("📋 Lihat Semua Proyek"):
+    st.switch_page("pages/02_Daftar_Proyek.py")
