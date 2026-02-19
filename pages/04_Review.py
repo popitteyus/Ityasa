@@ -2,6 +2,8 @@ import streamlit as st
 from utils.db import get_tasks_by_project, update_task_review
 
 st.set_page_config(page_title="Review", page_icon="✅", layout="wide")
+from utils.styles import get_css
+st.markdown(get_css(), unsafe_allow_html=True)
 
 if 'selected_project' not in st.session_state:
     st.warning("Pilih proyek terlebih dahulu.")
