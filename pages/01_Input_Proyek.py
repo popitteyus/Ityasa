@@ -4,7 +4,8 @@ from utils.db import insert_project
 import time
 
 st.set_page_config(page_title="Input Proyek", page_icon="📝", layout="wide")
-
+from utils.styles import get_css
+st.markdown(get_css(), unsafe_allow_html=True)
 st.markdown('<h1 style="font-size:2.5rem;">📝 Input Proyek Baru</h1>', unsafe_allow_html=True)
 
 with st.form("form_proyek"):
