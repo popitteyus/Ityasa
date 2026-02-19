@@ -1,5 +1,5 @@
 import streamlit as st
-from utils.db import supabase, update_task_review
+from utils.db import get_tasks_by_project, update_task_review
 
 st.set_page_config(page_title="Review", page_icon="✅", layout="wide")
 
@@ -10,12 +10,15 @@ if 'selected_project' not in st.session_state:
 proyek = st.session_state['selected_project']
 st.markdown(f"## ✅ Review Hasil: {proyek['nama_proyek']}")
 
-tasks = supabase.table("tasks").select("*, divisi(*)").eq("project_id", proyek['id']).in_("status", ["selesai", "pending"]).execute().data
+# Ambil tugas dengan status selesai atau pending
+tasks = get_tasks_by_project(proyek['id'])
+# Filter manual jika perlu, atau buat fungsi terpisah
+tasks_to_review = [t for t in tasks if t['status'] in ['selesai', 'pending']]
 
-if not tasks:
+if not tasks_to_review:
     st.info("Tidak ada tugas yang perlu direview.")
 else:
-    for task in tasks:
+    for task in tasks_to_review:
         with st.expander(f"**{task['divisi']['nama_divisi']}** - {task['created_at'][:16]} - Status: {task['status']}", expanded=(task['status']=='selesai')):
             st.write("**Prompt:**", task['prompt'])
             if task['output']:
