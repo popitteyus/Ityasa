@@ -203,7 +203,7 @@ with st.sidebar:
     except:
         st.image("https://via.placeholder.com/150x50?text=IVA", use_column_width=True)
     
-    st.markdown("## 🧠 **IVA Agency**")
+    st.markdown("## 🧠 **Ityasa Virtual Agency**")
     st.markdown("Ruang kendali kreatif dengan sentuhan manusia")
     st.markdown("---")
     
@@ -277,3 +277,4 @@ with st.container(border=True):
 
 # Footer
 st.markdown('<div class="footer">IVA — Where creativity meets artificial intelligence, guided by human wisdom.</div>', unsafe_allow_html=True)
+
