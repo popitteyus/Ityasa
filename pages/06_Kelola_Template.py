@@ -2,6 +2,8 @@ import streamlit as st
 from utils.db import get_divisi, get_prompt_templates_with_divisi, insert_template, delete_template
 
 st.set_page_config(page_title="Template", page_icon="📚", layout="wide")
+from utils.styles import get_css
+st.markdown(get_css(), unsafe_allow_html=True)
 
 st.markdown("## 📚 Kelola Template Prompt")
 
