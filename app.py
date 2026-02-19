@@ -217,7 +217,7 @@ with st.sidebar:
         st.write("(koneksi database...)")
     
     st.markdown("---")
-    st.caption(f"v2.0 - Human-in-the-loop • {time.strftime('%Y')}")
+    st.caption(f"v2.0 - Ityasa OS • {time.strftime('%Y')}")
     
     # Animasi kecil
     st.markdown("""
@@ -232,7 +232,7 @@ with col1:
     st.markdown('<h1 class="main-header">🏢 IVA</h1>', unsafe_allow_html=True)
     st.markdown('<p class="sub-header">Ityasa Virtual Agency — di mana AI bekerja, Anda yang memimpin.</p>', unsafe_allow_html=True)
 with col2:
-    st.markdown("### 👋 **Halo, Founder**")
+    st.markdown("### 👋 **Halo, Human**")
     if st.button("🔄 Refresh Data"):
         st.rerun()
 
@@ -277,4 +277,5 @@ with st.container(border=True):
 
 # Footer
 st.markdown('<div class="footer">IVA — Where creativity meets artificial intelligence, guided by human wisdom.</div>', unsafe_allow_html=True)
+
 
