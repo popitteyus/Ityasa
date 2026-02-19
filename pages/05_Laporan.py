@@ -3,6 +3,8 @@ from utils.db import get_tasks_by_project
 from datetime import datetime
 
 st.set_page_config(page_title="Laporan", page_icon="📄", layout="wide")
+from utils.styles import get_css
+st.markdown(get_css(), unsafe_allow_html=True)
 
 if 'selected_project' not in st.session_state:
     st.warning("Pilih proyek terlebih dahulu.")
