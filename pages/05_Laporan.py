@@ -1,5 +1,5 @@
 import streamlit as st
-from utils.db import supabase
+from utils.db import get_tasks_by_project
 from datetime import datetime
 
 st.set_page_config(page_title="Laporan", page_icon="📄", layout="wide")
@@ -11,12 +11,13 @@ if 'selected_project' not in st.session_state:
 proyek = st.session_state['selected_project']
 st.markdown(f"## 📄 Laporan Proyek: {proyek['nama_proyek']}")
 
-tasks = supabase.table("tasks").select("*, divisi(*)").eq("project_id", proyek['id']).eq("status", "disetujui").execute().data
+tasks = get_tasks_by_project(proyek['id'])
+approved_tasks = [t for t in tasks if t['status'] == 'disetujui']
 
-if not tasks:
+if not approved_tasks:
     st.info("Belum ada output yang disetujui.")
 else:
-    for task in tasks:
+    for task in approved_tasks:
         with st.container(border=True):
             st.markdown(f"### 🧠 {task['divisi']['nama_divisi']}")
             st.write(task['output'])
@@ -33,7 +34,7 @@ else:
 
 ## Hasil Pengerjaan
 """
-        for task in tasks:
+        for task in approved_tasks:
             laporan += f"""
 ### Divisi {task['divisi']['nama_divisi']}
 **Output:** {task['output']}
