@@ -2,7 +2,8 @@ import streamlit as st
 from utils.db import get_projects
 
 st.set_page_config(page_title="Daftar Proyek", page_icon="📋", layout="wide")
-
+from utils.styles import get_css
+st.markdown(get_css(), unsafe_allow_html=True)
 st.markdown('<h1 style="font-size:2.5rem;">📋 Daftar Proyek</h1>', unsafe_allow_html=True)
 
 projects = get_projects()
