@@ -40,7 +40,7 @@ st.markdown("""
 
 # Sidebar
 with st.sidebar:
-    st.image("https://via.placeholder.com/150x50?text=IVA+Logo", use_column_width=True)
+    st.image("logo.png", use_column_width=True)
     st.markdown("## 🧠 IVA Agency")
     st.markdown("Ruang kendali kreatif")
     st.markdown("---")
@@ -73,3 +73,4 @@ if st.button("➕ Input Proyek Baru"):
     st.switch_page("pages/01_Input_Proyek.py")
 if st.button("📋 Lihat Semua Proyek"):
     st.switch_page("pages/02_Daftar_Proyek.py")
+
