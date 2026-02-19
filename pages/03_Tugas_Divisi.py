@@ -2,7 +2,8 @@ import streamlit as st
 from utils.db import get_divisi, get_tasks_by_project, insert_task, get_prompt_templates
 
 st.set_page_config(page_title="Tugas Divisi", page_icon="⚙️", layout="wide")
-
+from utils.styles import get_css
+st.markdown(get_css(), unsafe_allow_html=True)
 if 'selected_project' not in st.session_state:
     st.warning("⚠️ Belum ada proyek yang dipilih.")
     if st.button("📋 Ke Daftar Proyek"):
