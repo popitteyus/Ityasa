@@ -28,12 +28,34 @@ st.markdown("""
         background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     }
     
-    /* Sidebar styling - glass effect */
-    .css-1d391kg, .css-12oz5g7 {
-        background: rgba(255, 255, 255, 0.8);
-        backdrop-filter: blur(10px);
-        border-right: 1px solid rgba(255,255,255,0.2);
-    }
+    with st.sidebar:
+    try:
+        st.image("logo.png", use_column_width=True)
+    except:
+        st.image("https://via.placeholder.com/150x50?text=IVA", use_column_width=True)
+    
+    st.markdown("## 🧠 **IVA Agency**")
+    st.markdown("Ruang kendali kreatif dengan sentuhan manusia")
+    st.markdown("---")
+    
+    st.markdown("### 🤖 Divisi AI Aktif")
+    divisi = get_divisi()
+    if divisi:
+        for d in divisi:
+            st.markdown(f"- **{d['nama_divisi']}**")
+            st.caption(f"  {d['deskripsi']}")
+    else:
+        st.write("(koneksi database...)")
+    
+    st.markdown("---")
+    st.caption(f"v2.0 - Human-in-the-loop • {time.strftime('%Y')}")
+    
+    # Animasi kecil
+    st.markdown("""
+    <div style="text-align: center; margin-top: 20px;">
+        <span style="font-size: 0.8rem; color: #888;">✨ Crafted with precision</span>
+    </div>
+    """, unsafe_allow_html=True)
     
     /* Header utama dengan gradasi emas */
     .main-header {
@@ -280,6 +302,7 @@ with st.container(border=True):
 
 # Footer
 st.markdown('<div class="footer">IVA — Where creativity meets artificial intelligence, guided by human wisdom.</div>', unsafe_allow_html=True)
+
 
 
 
