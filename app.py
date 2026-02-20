@@ -53,7 +53,7 @@ st.markdown("""
     # Animasi kecil
     st.markdown("""
     <div style="text-align: center; margin-top: 20px;">
-        <span style="font-size: 0.8rem; color: #888;">✨ Crafted with precision</span>
+       <span style="font-size: 0.8rem; color: #888;">Crafted with precision</span>
     </div>
     """, unsafe_allow_html=True)
     
@@ -303,3 +303,4 @@ with st.container(border=True):
 # Footer
 # Footer
 st.markdown('<div style="text-align: center; color: #718096; font-size: 0.9rem; margin-top: 3rem; padding: 1rem;">IVA — Where creativity meets artificial intelligence, guided by human wisdom.</div>', unsafe_allow_html=True)
+
