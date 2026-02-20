@@ -1,5 +1,6 @@
 
 import streamlit as st
+from utils.styles import get_css
 from utils.db import insert_project
 import time
 
