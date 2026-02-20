@@ -1,4 +1,5 @@
 import streamlit as st
+from utils.styles import get_css
 from utils.db import get_divisi
 import time
 
@@ -8,6 +9,8 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded"
 )
+
+st.markdown(get_css(), unsafe_allow_html=True)
 
 # ========== CUSTOM CSS PREMIUM ==========
 st.markdown("""
@@ -277,5 +280,6 @@ with st.container(border=True):
 
 # Footer
 st.markdown('<div class="footer">IVA — Where creativity meets artificial intelligence, guided by human wisdom.</div>', unsafe_allow_html=True)
+
 
 
