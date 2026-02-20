@@ -301,8 +301,5 @@ with st.container(border=True):
     st.info("Belum ada aktivitas. Mulai dengan input proyek baru.")
 
 # Footer
-st.markdown('<div class="footer">IVA — Where creativity meets artificial intelligence, guided by human wisdom.</div>', unsafe_allow_html=True)
-
-
-
-
+# Footer
+st.markdown('<div style="text-align: center; color: #718096; font-size: 0.9rem; margin-top: 3rem; padding: 1rem;">IVA — Where creativity meets artificial intelligence, guided by human wisdom.</div>', unsafe_allow_html=True)
