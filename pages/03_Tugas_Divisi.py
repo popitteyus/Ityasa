@@ -1,5 +1,6 @@
 import streamlit as st
 from utils.db import get_divisi, get_tasks_by_project, insert_task, get_prompt_templates
+from utils.ai_handler import panggil_gem
 
 st.set_page_config(page_title="Tugas Divisi", page_icon="⚙️", layout="wide")
 from utils.styles import get_css
