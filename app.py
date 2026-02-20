@@ -13,22 +13,7 @@ st.set_page_config(
 st.markdown(get_css(), unsafe_allow_html=True)
 
 # ========== CUSTOM CSS PREMIUM ==========
-st.markdown("""
-<style>
-    /* Import font Poppins */
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-    
-    /* Global styling */
-    html, body, [class*="css"] {
-        font-family: 'Poppins', sans-serif;
-    }
-    
-    /* Background gradient halus */
-    .stApp {
-        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    }
-    
-    with st.sidebar:
+with st.sidebar:
     try:
         st.image("logo.png", use_column_width=True)
     except:
@@ -50,12 +35,8 @@ st.markdown("""
     st.markdown("---")
     st.caption(f"v2.0 - Human-in-the-loop • {time.strftime('%Y')}")
     
-    # Animasi kecil
-    st.markdown("""
-    <div style="text-align: center; margin-top: 20px;">
-       <span style="font-size: 0.8rem; color: #888;">Crafted with precision</span>
-    </div>
-    """, unsafe_allow_html=True)
+    # Animasi kecil (tanpa emoji unicode yang mungkin bermasalah)
+    st.markdown('<div style="text-align: center; margin-top: 20px;"><span style="font-size: 0.8rem; color: #888;">Crafted with precision</span></div>', unsafe_allow_html=True)
     
     /* Header utama dengan gradasi emas */
     .main-header {
@@ -303,4 +284,5 @@ with st.container(border=True):
 # Footer
 # Footer
 st.markdown('<div style="text-align: center; color: #718096; font-size: 0.9rem; margin-top: 3rem; padding: 1rem;">IVA — Where creativity meets artificial intelligence, guided by human wisdom.</div>', unsafe_allow_html=True)
+
 
